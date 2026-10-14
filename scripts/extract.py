@@ -106,7 +106,7 @@ def extract():
                 seq += sorted((d for d in lines if d['col'] == c and lo < d['y0'] < hi),
                               key=lambda d: (round(d['y0']), d['x0']))
             if band < len(cuts): seq.append(spans_[band])
-        page_markers = 0
+        page_markers, prev_span, prev_y = 0, None, -100
         for d in seq:
             l, k = d['l'], d['k']
             text = ''.join(s['text'] for s in l['spans']).strip()
@@ -151,10 +151,24 @@ def extract():
                     else: runs.append((t.strip(), False))   # ordinal: XVIe, 1er
                     continue
                 runs.append((t, None if not t.strip() else bool(sp['flags'] & 2)))
-            if d['col'] == 'span' or d['x0'] - colx >= INDENT or para is None:
-                flush(); para = []
+            if d['col'] == 'span':
+                # centred epigraphs: a line continues the previous one when it starts no further
+                # right and follows it closely; attributions (shifted right) and gaps break
+                if not (prev_span and para is not None and d['x0'] <= prev_span[0] + 4
+                        and d['y0'] - prev_span[1] < 20):
+                    flush(); para = []
+                prev_span = (d['x0'], d['y0'])
+            elif (prev_span and para is not None and abs(d['x0'] - prev_span[0]) <= 4
+                  and d['y0'] - prev_span[1] < 20):
+                prev_span = (d['x0'], d['y0'])        # short last line of a centred epigraph
+            elif para is not None and (abs(d['y0'] - prev_y) < 2 or text[:1].islower()):
+                prev_span = None                      # same baseline as the previous line, or a lowercase start
+            else:
+                if prev_span or d['x0'] - colx >= INDENT or para is None:
+                    flush(); para = []
+                prev_span = None
             add_line(runs, para)
-            if d['col'] == 'span': flush()
+            prev_y = d['y0']
     flush()
     return sections, order, hyphen_joins, problems
 
