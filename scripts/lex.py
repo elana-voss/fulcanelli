@@ -74,10 +74,11 @@ def worldbook():
           'description': 'Terms, persons, works and places of Fulcanelli\'s Le Mystère des Cathédrales, '
                          'as the book itself explains them (English).', 'entries': {}}
     for uid, e in enumerate(entries):
-        head = e['en'].split(' — ')[0].strip()
-        keys = [head]
+        names = [x.strip() for x in e['en'].split(' — ')]  # a work: title as cited — our English title
+        head = names[-1]
+        keys = names[:1]  # a work is typed by its title as cited, not by our translation
         if e['kind'] == 'term' and ' ' not in head and not head.endswith('s'): keys.append(head + 's')
-        content = f"[{e['kind'].capitalize()}: {head}]\n{strip(e['body'])}"
+        content = f"[{e['kind'].capitalize()}: {head}{f' ({names[0]})' if len(names) > 1 else ''}]\n{strip(e['body'])}"
         quotes = [q['en'] for q in e.get('quotes', [])]
         if quotes: content += '\n\nIn the book\'s words: ' + ' / '.join(f'“{q}”' for q in quotes)
         wb['entries'][str(uid)] = dict(uid=uid, key=keys, keysecondary=[], comment=f"{head} ({e['kind']}; {e['id']})",
