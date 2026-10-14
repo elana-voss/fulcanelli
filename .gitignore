@@ -1,0 +1,14 @@
+__pycache__/
+
+# mdBook build output
+book/
+
+# agent/tool state
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
