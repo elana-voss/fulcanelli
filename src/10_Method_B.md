@@ -1,4 +1,4 @@
-# B: The Great Work as the Monuments Teach It
+# The Great Work in Plain Terms
 
 ## 1. What the book promises and what it withholds
 

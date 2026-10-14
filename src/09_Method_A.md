@@ -1,4 +1,4 @@
-# A: Reading the Stone Book — how Fulcanelli interrogates the monuments
+# Reading the Monuments in Plain Terms
 
 This page states, for a modern reader, the method by which *Le Mystère des Cathédrales* reads the Gothic cathedrals and a few later buildings. It is organised by principle. Every claim is marked **stated** (the text says it) or **interpreted** (our inference, with the passages it rests on). Quotations are verbatim French with our English beside them. Canseliet's prefaces are kept to the final section.
 

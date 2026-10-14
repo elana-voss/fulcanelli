@@ -10,7 +10,7 @@ Fulcanelli's *Le Mystère des Cathédrales* (1926) reads the Gothic cathedrals a
 
 - One page per part of the book: Canseliet's three prefaces, the introductory part, Paris, Amiens, Bourges, the Cyclic Cross of Hendaye, and the Conclusion.
 - *The Book as a Whole*: the argument of the book in one page.
-- Two method pages: **A**, how Fulcanelli reads the monuments; **B**, the Great Work that reading describes.
+- How Fulcanelli reads the monuments, and the Great Work that reading describes, each on two pages: *in Plain Terms*, with the French passages behind every point, and *in Plain Language*, the same in everyday words without references.
 - A lexicon of the book's terms, persons, works and places: English headword, the French form as the book spells it, and how the English was arrived at.
 - A list of the plates with their captions and the passages that cite them.
 
