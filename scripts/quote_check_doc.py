@@ -9,8 +9,14 @@ SEGS = {}
 for f in glob.glob(os.path.join(CHUNKS, '*.md')):
     SEGS.update(segments(open(f, encoding='utf-8').read()))
 QUOTE = re.compile(r'«([^»]+)»')
-ONE = r'[A-Z0-9.]+ (?:¶|n)\d+'
+ONE = r'[A-Z0-9.]+ (?:¶|n)\d+(?:[–-]\d+)?'
 REF = re.compile(rf'\[({ONE}(?:[;,] *{ONE})*)\]')
+
+
+def expand(ref):
+    """'PARIS.4 ¶5–9' -> the five paragraph ids"""
+    m = re.match(r'(.+ (?:¶|n))(\d+)[–-](\d+)$', ref)
+    return [f'{m.group(1)}{i}' for i in range(int(m.group(2)), int(m.group(3)) + 1)] if m else [ref]
 
 
 def check(page):
@@ -22,7 +28,7 @@ def check(page):
         r = REF.search(text, m.end(), len(text) if end < 0 else end)
         q = m.group(1)
         nq = norm(q)
-        refs = [x.strip() for x in re.split('[;,]', r.group(1))] if r else []
+        refs = [y for x in re.split('[;,]', r.group(1)) for y in expand(x.strip())] if r else []
         if any(nq in SEGS.get(x, '') for x in refs): continue
         hit = [k for k, v in SEGS.items() if nq in v]
         if hit: misref.append(f'  wrong ref: {refs or "none"} -> found in {hit}: "{q[:70]}"')

@@ -1,7 +1,7 @@
 """Rights gate, then copy the finished pages into src/ and build the mdBook.
   python publish.py          gate PRIVATE/work/pages/*.md; on success copy to src/, write SUMMARY.md, run mdbook build
 Gate (RIGHTS.md): a French quote whose reference lies in a restricted section (prefaces, Hendaye) must be one
-sentence of at most 40 words, and there may be at most one such quote per paragraph, and per heading block on the
+sentence of at most 40 words, and there may be at most one such quote per paragraph or list item, and per heading block on the
 restricted pages and the lexicon; no embedded images. Any violation fails the run and nothing is copied."""
 import glob, os, re, shutil, subprocess, sys
 from paths import PRIVATE, ROOT, write
@@ -11,7 +11,7 @@ SRC = os.path.join(ROOT, 'src')
 RESTRICTED = re.compile(r'^(PREF\d|HENDAYE)\b')
 PER_BLOCK = ('01_Prefaces.md', '06_Hendaye.md', '11_Lexicon.md')
 QUOTE = re.compile(r'«([^»]+)»')
-ONE = r'[A-Z0-9.]+ (?:¶|n)\d+'
+ONE = r'[A-Z0-9.]+ (?:¶|n)\d+(?:[–-]\d+)?'
 REF = re.compile(rf'\[({ONE}(?:[;,] *{ONE})*)\]')
 SUMMARY = [('Introduction', 'introduction.md'), None,
            ('Prefaces by Eugène Canseliet', '01_Prefaces.md'), ('The Mystery of the Cathedrals', '02_Introduction.md'),
@@ -26,7 +26,7 @@ def gate(path):
     if re.search(r'!\[', text): problems.append('embedded image')
     for block in re.split(r'\n(?=#)', text):
         n_block = 0
-        for para in block.split('\n\n'):
+        for para in re.split(r'\n\n|\n(?=[-*] |\d+\. )', block):  # a list item is its own point
             n_para = 0
             for m in QUOTE.finditer(para):
                 r = REF.search(para, m.end())

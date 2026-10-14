@@ -13,9 +13,12 @@ Requirements, milestones, account and decisions: `PLAN.md`. Original briefing: `
 - Markup in `input/` and chunks: italics `*…*` (the book's own emphasis); footnote markers `[^K]` numbered per section; original-edition page markers `(48)`…`(224)` inline (158 present; the source omits some, e.g. 59, 74, 88); plate refs `(pl. VI)`.
 - Paragraph IDs `[PARIS.3 ¶5]` count per section; notes `[PARIS.3 n2]`. A chunk holds consecutive sections of one part; `### <section>` lines mark section starts inside a chunk.
 
-## Stage 1 — chunk readings (state = files in `PRIVATE/work/`)
-- Bundle per agent: `python scripts/bundle.py PRIVATE/work/bundles/<name>.md RULES=prompts/rules_core.md TASK=prompts/chunk_reader.md [RECONCILER=…|CHECKER=…] CHUNK=PRIVATE/chunks/<id>.md …` (reader adds `CONTEXT=PRIVATE/work/context/<id>.md`; reconciler adds `READING_A`, `READING_B`; checker adds `QUOTE_REPORT=PRIVATE/work/qc/<id>.R.txt` and edits the reading in place).
-- Main text and Hendaye: readers A and B (Opus, high) → `readings/<id>.A/.B.json` → `qc_batch.py` → reconciler (Opus, high) → `readings/<id>.R.json` → `qc_batch.py` → copy to `final/<id>.json` → checker (Opus, medium, targeted Edits) → `qc_batch.py final/<id>.json` → `render_chunk.py final/<id>.json final/<id>.md`.
-- Prefaces: one reader → `qc_batch.py` → copy to `final/` → checker → same.
-- Agent prompt: read the bundle once (allow_large, offset if cut), read nothing else, one Write, no rewrite passes, no self-checking of quotes; reconcilers: keep thinking brief. At most 8 agents at once. An interrupted agent is resumed with SendMessage (its transcript is kept), not restarted.
-- Done when every id in `chunks/index.json` has `final/<id>.json` with 0 quotes not found.
+## Pipeline (state = files in `PRIVATE/work/`)
+- Bundle per agent: `python scripts/bundle.py PRIVATE/work/bundles/<name>.md RULES=prompts/rules_core.md TASK=prompts/<task>.md [CHECKER=prompts/<checker>.md] TEXT=<chunk files, comma-separated> [QUOTE_REPORT=PRIVATE/work/qc/<x>.txt]`. Bundles are not tracked; rebuild them with this command.
+- Agent prompt: read the bundle once (allow_large, offset if cut), read nothing else, one Write, no rewrite passes, no self-checking of quotes. Checkers correct with targeted Edits. At most 8 agents at once. An agent whose final report fails after its Write has still written its file: check the file before rerunning.
+- Part pages: `part_writer.md` (Opus, high) on the part's chunks → `pages/0N_<Part>.md` → `quote_check_doc.py` → `page_checker.md` (Opus, medium).
+- Synthesis: `synthesis.md` (Opus, medium) on the part pages → `pages/08_Synthesis.md`; its checker gets the part pages as TEXT.
+- Method pages: `method_page.md` (Fable, max) on all chunks, track A or B named in the agent prompt → `pages/09_Method_A.md`, `10_Method_B.md` → `quote_check_doc.py` → `page_checker.md` (Opus, medium) on all chunks.
+- Lexicon (`lex.py`): `lex_list.md` (Opus, high) → `lexicon/headwords.json` → `lex.py batches 6` → `lex_writer.md` (Opus, high) per batch → `lexicon/out_K.json` → `lex.py check` → `lex_checker.md` (Opus, medium) on all chunks (a checker given only the cited paragraphs removed true facts stated elsewhere in the book) → `lex.py render` → `pages/11_Lexicon.md` → `lex.py worldbook` → `lorebook/`.
+- Plates: `plates.py extract`, English captions in `plates/en.json`, `plates.py render` → `pages/12_Plates.md`.
+- Public render: `python scripts/publish.py` runs the rights gate on every page, copies them to `src/`, writes `SUMMARY.md` and runs `mdbook build` (output `book/`, not tracked).

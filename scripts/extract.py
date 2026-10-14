@@ -181,6 +181,7 @@ CLEAN = [  # typing artefacts of the source, fixed everywhere
     (re.compile(r'(?<=\w)- (?=\w)'), '-'),                                   # Notre- Dame
     (re.compile(r"\b([lLdDnNsSjJmMtTcC]|[Qq]u|[Jj]usqu|[Ll]orsqu|[Pp]uisqu|[Qq]uoiqu)’ (?=\w)"), r'\1’'),  # l’ art
     (re.compile('∆'), 'Δ'), (re.compile('µ'), 'μ'),                          # Symbol-font code points
+    (re.compile(''), '✮'),                                              # Wingdings star (rebus at AMIENS ¶40; witness has ✮)
     (re.compile(f'(?<=[{GREEK}])ζ(?![{GREEK}])'), 'ς'),                      # final sigma typed as zeta
 ]
 
