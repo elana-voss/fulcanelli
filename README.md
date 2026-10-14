@@ -2,6 +2,8 @@
 
 An English digest of Fulcanelli's *Le Mystère des Cathédrales*, published as an mdBook, with a SillyTavern worldbook built from its lexicon. The French text is the only source: no outside knowledge about Fulcanelli, the monuments or alchemy, and no published translation was used. Quotations are in French, verbatim, with paragraph/footnote references and our own English.
 
+Read the book online: <https://elana-voss.github.io/fulcanelli/>
+
 ## Contents
 
 - `src/`: the book. One page per part, the book as a whole, two method pages (A: how Fulcanelli reads the monuments; B: the Great Work that reading describes), the lexicon (English headword, the French form as the book spells it, how the English was arrived at) and the plate list.

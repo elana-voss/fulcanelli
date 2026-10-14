@@ -20,7 +20,7 @@ Briefing and fixed decisions: `HANDOFF.md` (sections 1, 2, 5). How to run: `RUNB
 | 5 | Lexicon: headword list (Opus high), 4 writer batches (Opus high), 4 checkers | 9 | 3 | done; 546 headwords in 6 batches (4 were too many for the output cap); 6 checkers + 1 restore agent (checkers given only cited paragraphs had removed true facts); 720 entry quotes, 0 not found |
 | 6 | Plates page (Opus medium + script) | 1 | 1 | done |
 | 7 | Worldbook by script; rights gate; mdBook build | — | 4, 5, 1 | done; 546 worldbook entries; gate passed; mdBook builds, 0 broken links |
-| 8 | Public repo ready to publish | — | 5 | done; README; the owner creates the GitHub repos and publishes |
+| 8 | Public repo ready to publish | — | 5 | done; README; repos on GitHub (public and private); book built by GitHub Actions at https://elana-voss.github.io/fulcanelli/ |
 | | Total | 28 + 10 | | |
 
 ## Decisions
