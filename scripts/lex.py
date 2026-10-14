@@ -40,6 +40,20 @@ def check(paths):
     return ok
 
 
+def excerpt(k):
+    """the paragraphs and footnotes a batch cites, for its checker (cheaper than the whole text)"""
+    out = load(os.path.join(LEX, f'out_{k}.json'))
+    refs = set(re.findall(r'[A-Z0-9.]+ (?:¶|n)\d+', json.dumps(out, ensure_ascii=False)))
+    parts = []
+    for f in sorted(glob.glob(os.path.join(CHUNKS, '*.md'))):
+        t = open(f, encoding='utf-8').read()
+        rights = re.search(r'^rights: (\S+)', t, re.M).group(1)
+        for m in re.finditer(r'^\[([^\]]+)\] (.*?)(?=^\[|^## |^### |\Z)', t, re.S | re.M):
+            if m.group(1) in refs: parts.append(f'[{m.group(1)}] (rights: {rights}) {m.group(2).strip()}')
+    write(os.path.join(LEX, f'text_{k}.md'), '\n\n'.join(parts) + '\n')
+    print(f'batch {k}: {len(refs)} refs, {len(parts)} paragraphs/notes')
+
+
 def render():
     hw = {h['id']: h for h in load(os.path.join(LEX, 'headwords.json'))}
     out = {}
@@ -94,5 +108,6 @@ if __name__ == '__main__':
     cmd = sys.argv[1]
     if cmd == 'batches': batches(int(sys.argv[2]))
     elif cmd == 'check': sys.exit(0 if check(sys.argv[2:]) else 1)
+    elif cmd == 'excerpt': excerpt(int(sys.argv[2]))
     elif cmd == 'render': render()
     elif cmd == 'worldbook': worldbook()

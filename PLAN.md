@@ -10,19 +10,18 @@ Briefing and fixed decisions: `HANDOFF.md` (sections 1, 2, 5). How to run: `RUNB
 5. Public/private split and rights per component enforced by script before any public render (`RIGHTS.md`).
 
 ## Milestones
-Money is the API-price equivalent (Opus 5.5 $4/$20, Fable 5.1 $10/$50 per M input/output tokens; the owner runs on Claude Max); estimates are Claude's.
 
-| # | Milestone | Agents | Serves | Estimate | Actual |
-|---|---|---|---|---|---|
-| 1 | Repos, extraction, witness corrections, chunking | — | 1–5 | 1.5 h, $5 | 1.3 h, est. $5 |
-| 2 | Pilot of the Atwood method on 3 chunks (superseded) | 10 | — | 1.5 h, $8 | 0.5 h, 1.0M agent tokens (est. $5) + session (est. $6) |
-| 3 | Part pages: 6 writers (Opus high), quote check, 6 checkers (Opus medium) | 12 | 1, 5 | 1 h, $7 | 0.4 h; 11 agents (Hendaye and Conclusion share writer and checker), 1.04M tokens, est. $5; 225 quotes, 0 not found |
-| 4 | Book synthesis (Opus medium), method pages A and B (Fable max), 3 checkers | 6 | 1, 2 | 1 h, $9 | |
-| 5 | Lexicon: headword list (Opus high), 4 writer batches (Opus high), 4 checkers | 9 | 3 | 1.5 h, $8 | |
-| 6 | Plates page (Opus medium + script) | 1 | 1 | 0.5 h, $1 | |
-| 7 | Worldbook by script; rights gate; mdBook build | — | 4, 5, 1 | 0.5 h, $3 | |
-| 8 | Public repo ready to publish | — | 5 | 0.5 h, $2 | |
-| | Total | 28 + 10 | | 8 h, $46 | |
+| # | Milestone | Agents | Serves | Actual |
+|---|---|---|---|---|
+| 1 | Repos, extraction, witness corrections, chunking | — | 1–5 | done |
+| 2 | Pilot of the Atwood method on 3 chunks (superseded) | 10 | — | 1.0M agent tokens |
+| 3 | Part pages: 6 writers (Opus high), quote check, 6 checkers (Opus medium) | 12 | 1, 5 | 11 agents (Hendaye and Conclusion share writer and checker), 1.04M tokens; 225 quotes, 0 not found |
+| 4 | Book synthesis (Opus medium), method pages A and B (Fable max), 3 checkers | 6 | 1, 2 | |
+| 5 | Lexicon: headword list (Opus high), 4 writer batches (Opus high), 4 checkers | 9 | 3 | |
+| 6 | Plates page (Opus medium + script) | 1 | 1 | |
+| 7 | Worldbook by script; rights gate; mdBook build | — | 4, 5, 1 | |
+| 8 | Public repo ready to publish | — | 5 | |
+| | Total | 28 + 10 | | |
 
 ## Decisions
 - Driving question: both tracks A and B; two method pages, one per track (the owner, 2026-10-14).
