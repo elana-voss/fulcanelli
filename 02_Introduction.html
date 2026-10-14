@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Mystery of the Cathedrals - Le Mystère des Cathédrales — An English Reading</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Fulcanelli&#x27;s Le Mystère des Cathédrales condensed in English from the French text, with method pages, lexicon and plate list; every claim referenced to the source.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-00376327.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-31c5ef1d.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Le Mystère des Cathédrales — An English Reading</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="the-mystery-of-the-cathedrals"><a class="header" href="#the-mystery-of-the-cathedrals">The Mystery of the Cathedrals</a></h1>
+<h2 id="intro1--the-cathedral-as-a-book-of-stone"><a class="header" href="#intro1--the-cathedral-as-a-book-of-stone">INTRO.1 — The cathedral as a book of stone</a></h2>
+<p>Fulcanelli recalls that the sight of a Gothic cathedral, at the age of seven, was the strongest impression of his childhood, and that he still feels a kind of rapture before these «beaux livres d’images dressés sur nos parvis» (<em>fine picture books set up on our church squares</em>) [INTRO.1 ¶1; INTRO.1 ¶2]. These stone books are not mute: unlike manuscripts and printed books, they convey «un sens unique, absolu, d’expression simple» (<em>a single, absolute meaning, simply expressed</em>), purged of literary subtleties and equivocations [INTRO.1 ¶4]. He quotes J. F. Golfs with approval on the “language of stones” of Gothic art, clear and sublime, which speaks to the humblest soul as to the most cultivated [INTRO.1 ¶5].</p>
+<p>The cathedral should not be seen only as a work for the glory of Christianity but as «une vaste concrétion d’idées, de tendances, de foi populaires» (<em>a vast concretion of popular ideas, tendencies and faith</em>), a whole to which one may safely refer to grasp the ancestors’ thought in any domain [INTRO.1 ¶6]. Its light and silence invite prayer, but its structure and ornament give off a more secular, «presque païen» (<em>almost pagan</em>) spirit [INTRO.1 ¶8]. Political assemblies met there under the bishop, grain and cloth prices were set there, and the guilds had their masterpieces blessed there [INTRO.1 ¶10].</p>
+<p>He describes the Feast of Fools, “or of the Wise”, a «kermesse hermétique processionnelle» (<em>hermetic processional fair</em>): a satire of an ignorant clergy subject to the authority of «Science déguisée» (<em>disguised Science</em>), with its chariot of the Triumph of Bacchus and a mass composed by “l’initié” Pierre de Corbeil, archbishop of Sens, after the pagan ritual, at which the faithful of 1220 cried “Evohé!” [INTRO.1 ¶11]. The Feast of the Ass celebrated “maître Aliboron” in a parody the priest accepted without understanding; Fulcanelli reads its “mystifiers of the land of Saba” as «ou Caba, les cabalistes en personne» (<em>or Caba, the cabalists in person</em>) [INTRO.1 ¶14]. He cites Witkowski for a capital in the nave of Notre-Dame de Strasbourg showing a satirical procession of a pig with a holy-water stoup, asses in priestly robes, monkeys and a fox in a reliquary, the Procession of the Fox or Feast of the Ass, and notes the same scene in manuscript 5055 of the Bibliothèque nationale, folio 40 [INTRO.1 ¶14]. Other yearly customs in which «transparaît un sens hermétique souvent très pur» (<em>an often very pure hermetic meaning shows through</em>) include the Flagellation of the Alleluia at Langres, where choirboys whipped their humming <em>sabots</em> out of the nave, the Diablerie de Chaumont, the Infanterie dijonnaise with its Mère Folle, and the Jeu de Pelote in Saint-Etienne at Auxerre, which disappeared about 1538 [INTRO.1 ¶15]. A note defines the <em>sabot</em> as a top shaped like a Tau or Cross and states that in cabala «sabot équivaut à cabot ou chabot, le chat botté des Contes de ma Mère l’Oie» (<em>sabot is equivalent to cabot or chabot, the Puss in Boots of the Mother Goose Tales</em>); the Epiphany cake sometimes holds a <em>sabot</em> instead of a bean [INTRO.1 n4].</p>
+<h2 id="intro2--notre-dame-meeting-place-of-the-alchemists"><a class="header" href="#intro2--notre-dame-meeting-place-of-the-alchemists">INTRO.2 — Notre-Dame, meeting place of the alchemists</a></h2>
+<p>The cathedral sheltered every misfortune: at Notre-Dame de Paris the sick stayed in a chapel lit by six lamps until cured, physicians consulted around the holy-water stoup, and the Faculty of Medicine met there until 1454 [INTRO.2 ¶1]. It was an asylum for the pursued, a tomb for the illustrious, «la cité dans la cité» (<em>the city within the city</em>) [INTRO.2 ¶2]. Its ornament makes it an encyclopedia of all medieval knowledge, and its stone sphinxes are «des éducateurs, des initiateurs au premier chef» (<em>educators, initiators above all</em>) [INTRO.2 ¶3]. Its chimeras, gargoyles, dragons and tarasques guard the ancestral heritage; art and science left the monasteries for the building, and most captivating of all is «le symbolisme des vieux alchimistes, habilement traduit par les modestes statuaires médiévaux» (<em>the symbolism of the old alchemists, skilfully rendered by the modest medieval sculptors</em>) [INTRO.2 ¶4]. Notre-Dame de Paris, «église philosophale» (<em>philosophic church</em>), is one of the most perfect examples, and he quotes Victor Hugo calling it the most satisfying summary of hermetic science, of which Saint-Jacques-la-Boucherie was a complete hieroglyph [INTRO.2 ¶4].</p>
+<p>The alchemists of the fourteenth century met there weekly, «au jour de Saturne» (<em>on Saturn’s day</em>), at the great porch, the Saint-Marcel portal or the little Porte-Rouge decorated with salamanders; Denys Zachaire reports the custom still alive in 1539, and Noël du Fail names Notre-Dame as their great meeting place [INTRO.2 ¶5]. There, among painted and gilded arches, each set out his work and the allegory of the “beautiful book” was studied on the spot [INTRO.2 ¶6]. A note adds that everything in the cathedrals was gilded and painted, citing the Armenian bishop Martyrius, who said the porch of Notre-Dame shone like the entrance of paradise [INTRO.2 n2]. After Gobineau de Montluisant and Cambriel, Fulcanelli undertakes the pilgrimage, to «parler aux pierres et les interroger» (<em>speak to the stones and question them</em>) [INTRO.2 ¶7]. It is late: Soufflot’s vandalism destroyed much, and though art owes something to the restorers Toussaint, Geffroy Dechaume, Bœswillwald, Viollet-le-Duc and Lassus, «la Science ne retrouvera jamais ce qu’elle a perdu» (<em>Science will never recover what it has lost</em>) [INTRO.2 ¶7]. Enough remains to show that the hidden arcanum can be found again «sous l’écorce pétrifiée du prodigieux grimoire» (<em>beneath the petrified bark of the prodigious grimoire</em>) [INTRO.2 ¶8].</p>
+<h2 id="intro3--gothic-as-argot-the-language-of-the-birds"><a class="header" href="#intro3--gothic-as-argot-the-language-of-the-birds">INTRO.3 — “Gothic” as argot; the Language of the Birds</a></h2>
+<p>Fulcanelli rejects deriving <em>gothique</em> from the Goths, or from a mocking sense of “barbarian”, the view of the classical School [INTRO.3 ¶2]. The people kept “Art gothique” against the Academy’s “Art ogival”, and the reason lies in the word’s «origine cabalistique» (<em>cabalistic origin</em>) rather than its «racine littérale» (<em>literal root</em>) [INTRO.3 ¶3]. Some authors linked <em>gothique</em> with <em>goétique</em>, Gothic with goetic or magic art [INTRO.3 ¶4]. His own reading: «art gothique n’est qu’une déformation orthographique du mot argotique, dont l’homophonie est parfaite» (<em>Gothic art is only a misspelling of the word argotique, whose homophony is perfect</em>), by the phonetic law that governs traditional cabala in every language regardless of spelling [INTRO.3 ¶5]. The cathedral is a work of «art goth ou d’argot» (<em>goth art, or of argot</em>) [INTRO.3 ¶5]. Since the dictionaries define <em>argot</em> as a language for those who wish to communicate without being understood by those around them, it is «une cabale parlée» (<em>a spoken cabala</em>) [INTRO.3 ¶5]. The <em>argotiers</em> are hermetic descendants of the Argonauts, who sailed the Argo and spoke the «langue argotique» (<em>argotic language</em>) on their way to Colchos for the Golden Fleece [INTRO.3 ¶5]. All Initiates spoke argot: the truands of the Cour des Miracles, Villon at their head, and the <em>Frimasons</em>, the medieval freemasons who built the argotic masterpieces [INTRO.3 ¶5]. Argot is still the language of outcasts called <em>voyous</em>, which he glosses as «voyants» (<em>seers</em>), and Children of the Sun; Gothic art is «l’art got ou cot (Χο), l’art de la Lumière ou de l’Esprit» (<em>the got or cot art (Χο), the art of Light or of the Spirit</em>) [INTRO.3 ¶6].</p>
+<p>He grants these are puns, but holds that nothing here below is chance and that words are useless if their usual sense leads to no discovery; marvels would be found «si nous savions disséquer les mots, en briser l’écorce et libérer l’esprit» (<em>if we knew how to dissect words, break their bark and free the spirit</em>) they contain [INTRO.3 ¶7]. Argot derives from the «Langue des Oiseaux, mère et doyenne de toutes les autres» (<em>Language of the Birds, mother and eldest of all the others</em>), the language of philosophers and diplomats, which Jesus revealed to his apostles by sending the Holy Spirit [INTRO.3 ¶8]. The Incas called it <em>Langue de cour</em>, the key to a double science, sacred and profane; the Middle Ages called it <em>Gaie science</em>, <em>Langue des dieux</em>, <em>Dive-Bouteille</em> [INTRO.3 ¶8]. A note calls Rabelais’s <em>Gargantua and Pantagruel</em> «un roman d’argot» (<em>a novel in argot</em>) [INTRO.3 n1]. Men spoke it before the tower of Babel, and a note reads <em>tour de Babel</em> as «la tournure ba employée pour bel» (<em>the turn ba used for bel</em>) [INTRO.3 ¶8; INTRO.3 n2]. Its character survives in Picard, Provençal and the gypsies’ dialect [INTRO.3 ¶8]. Tiresias learned it from Minerva and shared it with Thales of Miletus, Melampus and Apollonius of Tyana, fictitious figures whose names speak in this science [INTRO.3 ¶9]. A note reads Apollonius as «une image mytho-hermétique du compost, ou rebis philosophal» (<em>a mytho-hermetic image of the compost, or philosophic rebis</em>), made by the union of brother and sister, Gabritius and Beya, Apollo and Diana [INTRO.3 n4].</p>
+<h2 id="intro4--the-cross-shaped-plan-crucible-and-cornerstone"><a class="header" href="#intro4--the-cross-shaped-plan-crucible-and-cornerstone">INTRO.4 — The cross-shaped plan: crucible and cornerstone</a></h2>
+<p>Gothic churches are almost all laid out as a Latin cross, and «la croix est l’hiéroglyphe alchimique du creuset» (<em>the cross is the alchemical hieroglyph of the crucible</em>); after Ducange, <em>crucibulum</em> has the root <em>crux, crucis</em> [INTRO.4 ¶1]. In the crucible the first matter, like Christ, suffers the Passion, dies and rises purified, spiritualised, already transformed [INTRO.4 ¶2]. He reminds his “brother alchemists” that the cross bears the three nails that slew «le Christ-matière, image des trois purifications par le fer et par le feu» (<em>the Christ-matter, image of the three purifications by iron and by fire</em>), and cites a passage he gives as Saint Augustine’s on the paschal lamb, which, set out to be roasted whole, figured a cross and was the symbol of the cross Christ was to endure [INTRO.4 ¶3].</p>
+<p>The cross is older than Christianity, as the abbé Ansault shows [INTRO.4 ¶4]. With its apse, the church plan takes the form of the Egyptian <em>croix ansée</em>, read <em>ank</em>, which designates «la Vie universelle cachée dans les choses» (<em>the universal Life hidden in things</em>) [INTRO.4 ¶4]. The hermetic equivalent of <em>ank</em> is the emblem of Venus or Cypris (“the impure”), common copper, which some called brass to veil the sense; hence the good authors’ «Blanchis le laiton et brûle tes livres» (<em>Whiten the brass and burn your books</em>) [INTRO.4 ¶4]. He states that Κυπρος is the same word as Σουϕρος, sulphur, meaning manure or filth, and quotes the Cosmopolite: the wise will find our stone even in dung [INTRO.4 ¶4]. So the plan reveals, by the sign of the Cross, the qualities of the first matter and its preparation, which leads to the «Première pierre, pierre angulaire du Grand Œuvre philosophal» (<em>First stone, cornerstone of the philosophic Great Work</em>) [INTRO.4 ¶5]. Before being cut, the rough, impure stone was often given the image of the devil [INTRO.4 ¶5].</p>
+<p>Notre-Dame had such a figure under the rood screen: a devil with a huge mouth in which the faithful snuffed their candles, which the people called <em>Maistre Pierre du Coignet</em> [INTRO.4 ¶6]. It represented the initial matter of the Work humanised as Lucifer, the light-bearer, and was the symbol of «notre pierre angulaire, la pierre du coin, la maîtresse pierre du coignet» (<em>our cornerstone, the stone of the corner, the master stone of the corner</em>) [INTRO.4 ¶6]. Amyraut is quoted on the stone the builders rejected that was made the “master stone of the corner”, on which the whole building rests [INTRO.4 ¶6]. The cutting of this stone, that is its preparation, is shown on a bas-relief of an apsidal chapel on the rue du Cloître-Notre-Dame side [INTRO.4 ¶6].</p>
+<h2 id="intro5--labyrinths-and-ariadnes-thread"><a class="header" href="#intro5--labyrinths-and-ariadnes-thread">INTRO.5 — Labyrinths and Ariadne’s thread</a></h2>
+<p>Labyrinths were laid in the floor at the crossing of nave and transepts; Sens, Reims, Auxerre, Saint-Quentin, Poitiers and Bayeux keep theirs [INTRO.5 ¶1]. At Amiens the central slab bore a gold bar and half-circle, the sun rising over the horizon, later replaced in copper and then lost [INTRO.5 ¶1]. The Chartres labyrinth, called «la lieue (pour le lieu)» (<em>the league, for the place</em>), once showed Theseus fighting the Minotaur at its centre, proof of pagan subjects in Christian imagery and so of «un sens mytho-hermétique évident» (<em>an evident mytho-hermetic meaning</em>); Fulcanelli denies any link with the ancient labyrinths of Greece and Egypt [INTRO.5 ¶1]. Berthelot is quoted: the labyrinth of Solomon is a cabalistic figure found at the head of certain alchemical manuscripts [INTRO.5 ¶2].</p>
+<p>The labyrinth is «emblématique du travail entier de l’Œuvre» (<em>emblematic of the whole labour of the Work</em>), with its two chief difficulties: the way to the centre, «où se livre le rude combat des deux natures» (<em>where the harsh combat of the two natures is fought</em>), and the way out, for which the artist needs Ariadne’s thread [INTRO.5 ¶3]. His cabala: <em>Ariane</em> is a form of <em>airagne</em> (spider) by metathesis, and αραχνη may be read <em>arahné, arahni, arahgne</em>, and he asks whether our soul is not the spider that weaves our own body; from αιρω, to seize or attract, comes αιρην, the magnet, «la vertu renfermée dans le corps que les Sages nomment leur magnésie» (<em>the virtue enclosed in the body that the Sages call their magnesia</em>) [INTRO.5 ¶5]. In Provençal iron is <em>aran</em> or <em>iran</em>, the masonic Hiram, the divine Ram, architect of Solomon’s Temple, while the spider is <em>aragno, iragno, airagno</em> among the félibres and <em>arègni</em> in Picard; Σιδηρος means both iron and magnet [INTRO.5 ¶5]. αρυω means the rising of a star from the sea, so αρυαν, <em>ariane</em>, is the Orient; it also means to attract, so αρυαν is also the magnet; and Σιδηρος, giving Latin <em>sidus</em>, star, joins <em>aran, iran, airan</em> to the rising sun [INTRO.5 ¶5]. Ariadne, the mystic spider, has fled Amiens, leaving only the trace of her web on the pavement [INTRO.5 ¶6]. The labyrinth of Cnossos was called <em>Absolum</em>, close to <em>Absolu</em>, the old alchemists’ name for the philosophers’ stone [INTRO.5 ¶7].</p>
+<h2 id="intro6--orientation-the-three-roses-and-the-star"><a class="header" href="#intro6--orientation-the-three-roses-and-the-star">INTRO.6 — Orientation, the three roses and the star</a></h2>
+<p>Churches face so that those entering from the West walk toward the sunrise: «Ils quittent les ténèbres et vont vers la lumière» (<em>They leave darkness and go toward light</em>) [INTRO.6 ¶1]. Of the three roses, the north one is never lit by the sun, the south one blazes at noon, and the great west rose glows at sunset; thus the façades display the colours of the Work in a circle, from black darkness through white to the perfection of red light [INTRO.6 ¶2]. The central rose was called <em>Rota</em>, the wheel, and the wheel is the alchemical hieroglyph of the time needed for coction, and so of coction itself; hence the steady fire kept day and night is called «feu de roue» (<em>wheel fire</em>) [INTRO.6 ¶3]. Besides this common heat a second agent is needed, the secret or philosophic fire, which, excited by common heat, «fait tourner la roue» (<em>makes the wheel turn</em>) [INTRO.6 ¶3]. Verses of De Nuysement counsel keeping the middle course, neither rising too high nor sinking too low [INTRO.6 ¶4–¶11; INTRO.6 n1]. The rose thus represents the action of fire and its duration, and the period’s prevailing fire symbol gave the name <em>Gothique flamboyant</em> [INTRO.6 ¶12].</p>
+<p>Some roses, emblems of the compound, bear the six-pointed star, a magic seal showing the artist he has prepared the philosophic mixture canonically: «dite Etoile des Mages, qui rayonne à la surface du compost» (<em>called the Star of the Magi, which shines on the surface of the compost</em>), above the crib of the Child-King [INTRO.6 ¶13]. Six-petalled roses reproduce the Seal of Solomon, at Lyon, Toul, Abbeville, Rouen and the Sainte-Chapelle [INTRO.6 ¶14]. As this star guides the alchemist and announces the Saviour’s birth, he gathers texts about it and leaves the reader to collate them [INTRO.6 ¶15].</p>
+<h2 id="intro7--texts-on-the-star"><a class="header" href="#intro7--texts-on-the-star">INTRO.7 — Texts on the star</a></h2>
+<p>Varro tells that Aeneas saw the star of Venus every day, by day, until he reached Laurentum, where it vanished; a note reads <em>Laurente</em> cabalistically as «l’or enté, greffé» (<em>gold grafted, engrafted</em>) [INTRO.7 ¶1; INTRO.7 ¶2; INTRO.7 n1]. A legend from the Book of Seth tells of twelve Magi, so called because they glorified God in silence, who climbed the Mount of Victory each year to wait for the star [INTRO.7 ¶4; INTRO.7 ¶5; INTRO.7 ¶6; INTRO.7 ¶7]. At last it appeared «sous la forme d’un petit enfant, offrant la figure d’une croix» (<em>in the form of a little child, bearing the figure of a cross</em>) [INTRO.7 ¶7] and sent them to Judea [INTRO.7 ¶7]. Another legend gives the star the shape of an eagle with a cross above it [INTRO.7 ¶11]. A text attributed to Julius Africanus has the star descend in Persia and the Magi dedicate the Virgin’s portrait to Jupiter Mithra, “au dieu soleil” [INTRO.7 ¶12; INTRO.7 ¶13]. Saint Ignatius writes that sun, moon and stars formed the chorus of this star, and Huginus à Barma uses the same terms for the matter of the Great Work on which the star appears: «bien imprégnée des rayons du soleil, de la lune et des autres astres» (<em>well steeped in the rays of the sun, the moon and the other stars</em>) [INTRO.7 ¶14; INTRO.7 ¶15].</p>
+<p>Chalcidius, who in Fulcanelli’s note is plainly addressing an initiate, tells of Chaldeans who saw the star and sought a newborn God [INTRO.7 ¶16; INTRO.7 ¶17; INTRO.7 n8]. Diodore of Tarsus says it was no ordinary star but a power «ayant pris la forme d’un astre» (<em>having taken the form of a star</em>) [INTRO.7 ¶18]. The Gospels of Luke and Matthew are quoted, then Bonnetty, who finds the Magi and the star a mystery [INTRO.7 ¶19–¶31]. The first mention of the star is in Balaam: “a star rises out of Jacob” [INTRO.7 ¶32–¶34]. In symbolic imagery the star marks conception as well as birth: the Virgin of Larmor holds a great star, <em>maris stella</em>, and a window of Saint-Jean at Rouen, after Witkowski, showed the conception of saint Romain as a star on the bed-cover over the mother’s belly, bordered with Mars, Jupiter and Venus [INTRO.7 ¶35; INTRO.7 ¶36].</p>
+<h2 id="intro8--the-crypt-and-the-black-virgins"><a class="header" href="#intro8--the-crypt-and-the-black-virgins">INTRO.8 — The crypt and the Black Virgins</a></h2>
+<p>The crypt takes its name from Κρυπτος, hidden; its massive pillars express a force «réelle, mais occulte» (<em>real, but occult</em>) working in the dark [INTRO.8 ¶1; INTRO.8 ¶3]. Underground chambers once housed statues of Isis, which became the Black Virgins, bearing the inscription <em>Virgini parituræ</em>, “to the Virgin who is to give birth” [INTRO.8 ¶4]. Through Dujols he quotes Bigarne: Isis before conception is the <em>Virgo paritura</em>, «la terre avant sa fécondation» (<em>the earth before its fertilisation</em>) [INTRO.8 ¶4]. Fulcanelli’s own reading: «Elles figurent, dans la symbolique hermétique, la terre primitive» (<em>In hermetic symbolism they represent the primitive earth</em>), which the artist must choose as the subject of his work: the first matter as ore from the mines, a black, heavy, brittle substance; hence their colour and their underground home [INTRO.8 ¶4].</p>
+<p>Chartres has two: <em>Notre-Dame-sous-Terre</em> in the crypt, inscribed <em>Virgini parituræ</em>, once an Isis statuette, and <em>Notre-Dame-du-Pilier</em> [INTRO.8 ¶5]. The Black Virgin of Le Puy has the shape of a triangle, the Child’s head appearing at the navel [INTRO.8 ¶6]. Notre-Dame-de-Confession at Saint-Victor in Marseille holds a sceptre and wears a triple-fleuron crown (pl. I) [INTRO.8 ¶7]. Others are at Rocamadour, Vichy and Quimper [INTRO.8 ¶8–¶10]. A Virgin in the cellars of the Paris Observatory, invoked as <em>Nostre-Dame de dessoubs terre</em>, personifies «le mystérieux sujet d’Hermès» (<em>the mysterious subject of Hermes</em>) [INTRO.8 ¶11]. Only green candles were burned in their processions [INTRO.8 ¶12]. An Isis at Metz, after Witkowski, had a veiled head, red skin and black drapery [INTRO.8 ¶13]. The mysteries of Isis and Ceres were secret, but the four degrees of Ceres’s priests, the Hierophant, the Torch-bearer for the Sun, the Herald for Mercury and the Altar minister for the Moon, lead Fulcanelli to think them of the same order as the hermetic Science [INTRO.8 ¶14]. Cybele, also “mother of the gods”, was worshipped as a black stone fallen from heaven, shown between two lions, with a veil and a key: «Isis, Cérès, Cybèle, trois têtes sous le même voile» (<em>Isis, Ceres, Cybele, three heads under the same veil</em>) [INTRO.8 ¶15].</p>
+<h2 id="intro9--notre-dame-de-paris-legris-and-saint-christopher"><a class="header" href="#intro9--notre-dame-de-paris-legris-and-saint-christopher">INTRO.9 — Notre-Dame de Paris: Legris and Saint Christopher</a></h2>
+<p>Fulcanelli takes Notre-Dame de Paris as his type, despite the damage of time, revolutions, vandals and restorers [INTRO.9 ¶1; INTRO.9 ¶2]. On the square once stood a stone statue holding a book and a serpent, part of a fountain whose distich, in the book’s French, promises the thirsty that the Goddess has prepared eternal waters [INTRO.9 ¶4–¶8]. The people called it <em>Monsieur Legris</em>, <em>Vendeur de gris</em>, <em>Grand Jeûneur de Notre-Dame</em> [INTRO.9 ¶9]. He prefers the explanation of Amédée de Ponthieu, no hermeticist: a sacred monolith called Phœbigène, son of Apollo, later <em>Maître Pierre</em>, meaning «Pierre maîtresse, pierre de pouvoir» (<em>master stone, stone of power</em>), and <em>Legris</em> when «gris signifiait feu» (<em>gris meant fire</em>) [INTRO.9 ¶10; INTRO.9 ¶11]. His notes gloss Phœbigène as begotten of the sun or of gold, and the master stone as the cornerstone already discussed [INTRO.9 n2; INTRO.9 n3]. It was removed in 1748 [INTRO.9 ¶13].</p>
+<p>The grey-painted colossus of Saint Christopher in the nave, erected in 1413, was destroyed in 1781; others perished at Auxerre and Saint-Jacques-la-Boucherie [INTRO.9 ¶14]. The reason lies in the symbol: for the crowd Christopher is the Christ-bearer, but phonetic cabala reads Christophe as Chrysophe, «qui porte l’or» (<em>who carries gold</em>) [INTRO.9 ¶15]. He is the hieroglyph of solar sulphur (Jesus), or nascent gold, raised on the mercurial waters and carried by Mercury’s own energy to the power of the Elixir; since, after Aristotle, Mercury’s emblematic colour is grey or violet, the statues were painted grey [INTRO.9 ¶15]. At Rocamadour a giant Saint Christopher stands beside an iron coffer and a sword fragment said to be Durandal; the sword that opens the rock, Moses’ rod, Rhea’s sceptre and Atalanta’s javelin are one hieroglyph of the Philosophers’ hidden matter, whose nature Saint Christopher shows and whose result the coffer shows [INTRO.9 ¶16].</p>
+<p>He blames the Renaissance and the eighteenth century for these losses: their artists, ignorant of medieval symbolism, copied antique models [INTRO.9 ¶18; INTRO.9 ¶19; INTRO.9 ¶20], whereas «Dans l’œuvre gothique, la facture demeure soumise à l’Idée» (<em>In the Gothic work, execution stays subject to the Idea</em>) [INTRO.9 ¶21]. This opposition explains the Renaissance’s contempt for the Gothic and the countless mutilations it caused [INTRO.9 ¶22; INTRO.9 ¶23].</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="01_Prefaces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="03_Paris.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="01_Prefaces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="03_Paris.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
