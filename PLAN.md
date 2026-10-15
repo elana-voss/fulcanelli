@@ -21,10 +21,14 @@ Briefing and fixed decisions: `HANDOFF.md` (sections 1, 2, 5). How to run: `RUNB
 | 6 | Plates page (Opus medium + script) | 1 | 1 | done |
 | 7 | Worldbook by script; rights gate; mdBook build | — | 4, 5, 1 | done; 546 worldbook entries; gate passed; mdBook builds, 0 broken links |
 | 8 | Public repo ready to publish | — | 5 | done; README; repos on GitHub (public and private); book built by GitHub Actions at https://elana-voss.github.io/fulcanelli/ |
-| | Total | 28 + 10 | | |
+| 9 | Worldbook keys built by script (cleaning, plurals, surnames, English titles, everyday-word gating, merges, read-me entry, checks) | — | 4 | est. 120k tokens | done with 10: 545 entries, 1,101 keys, 13 gated, 1 merge, 0 failed checks; 9 + 10 ≈ 90k tokens |
+| 10 | English variants and short forms for all 546 entries, as rules data | — | 4 | est. 150k tokens | done with 9 |
+| 11 | Rebuild, SillyTavern matching check on sample sentences, commit, push | — | 4 | est. 30k tokens | done; sample sentences checked with SillyTavern's matching rules (`lex.py fire`); ≈ 10k tokens; 9–11 total ≈ 100k of 300k |
+| | Total | 28 + 10 | | 9–11: est. 300k tokens |
 
 ## Decisions
 - Driving question: both tracks A and B; two method pages, one per track (the owner, 2026-10-14).
 - Method (the owner, 2026-10-14: "the book has only 70 pages … It has to differ from the Atwood approach"; plan accepted with "go"): no chunk readings; each writer reads whole parts of the French text and writes its page directly; a script checks every quote; one checker per page or batch.
 - Rights gate counts each list item as its own point, as RIGHTS.md's "one short quote per point" (Claude).
 - Worldbook: a work is keyed by its title as the book cites it (e.g. *Atalanta Fugiens*); our English title heads the entry (Claude).
+- Worldbook keys (milestones 9–11, the owner's "ok" 2026-10-16): keys follow the Atwood lorebook guide (PRIVATE/LOREBOOK_GUIDE_TEMP.md); judgment calls live in `scripts/worldbook_rules.json`; the lexicon page is unchanged (Claude). Keys are English plus names and titles as the book spells them; French forms of terms are not keys (HANDOFF: worldbook keys English).
