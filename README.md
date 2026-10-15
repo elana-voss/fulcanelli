@@ -6,7 +6,7 @@ Read the book online: <https://elana-voss.github.io/fulcanelli/>
 
 ## Lorebook
 
-[`lorebook/Fulcanelli_Mystere_des_Cathedrales.json`](https://raw.githubusercontent.com/elana-voss/fulcanelli/main/lorebook/Fulcanelli_Mystere_des_Cathedrales.json): the worldbook, English only, built from the lexicon: one entry per subject, keyed by the words a reader would type (English names, variants and spellings; persons also by surname; works by their cited and English titles). Download it and import it in SillyTavern under World Info, Import.
+[`lorebook/Fulcanelli_Mystere_des_Cathedrales.json`](https://raw.githubusercontent.com/elana-voss/fulcanelli/main/lorebook/Fulcanelli_Mystere_des_Cathedrales.json): the worldbook, English only, built from the lexicon: one entry per subject, keyed by the words a reader would type (surnames, short titles, English terms and their usual synonyms; a work cited once is found under its author). Download it and import it in SillyTavern under World Info, Import.
 
 ## Contents
 

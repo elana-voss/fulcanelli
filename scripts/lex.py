@@ -6,7 +6,7 @@
                               (English only) and worldbook_report.txt; exit 1 on a failed check
   python lex.py fire TEXT     entries SillyTavern would trigger on TEXT
 Lexicon files live in PRIVATE/work/lexicon/."""
-import glob, json, os, re, sys, unicodedata
+import glob, json, os, re, sys
 from paths import CHUNKS, PRIVATE, ROOT, write
 from quote_check import norm, segments
 
@@ -75,59 +75,10 @@ def st_match(key, text):
         end = key.rfind('/')
         return re.search(key[1:end], text, re.I if 'i' in key[end + 1:] else 0) is not None
     key, text = key.lower(), text.lower()
-    if len(key.split()) > 1: return key in text
     return re.search(r'(?:^|\W)' + re.escape(key) + r'(?:$|\W)', text, re.A) is not None
 
 
-ART = re.compile(r'^(?:the|a|an|some|these|those|our)\s+', re.I)
-FR_ART = re.compile(r"^(?:(?:le|la|les)\s+|l['’])", re.I)
-PLURAL_SKIP = ('s', 'x', 'z', 'ch', 'sh', 'y', 'f', 'fe', 'al', 'ed', 'ic', 'ous', 'ive', 'ism', 'ry', 'a', 'i', 'um')
-
-
-def clean(c, kind, keep):
-    """A candidate as keys: no brackets, split on ' / ' and ';', no leading article; unusable ones dropped."""
-    out = []
-    for c in re.split(r'\s+/\s+|;', re.sub(r'\s*\([^)]*\)', '', c)):
-        c = c.strip()
-        if c not in keep:
-            c = ART.sub('', c)
-            if kind == 'work': c = FR_ART.sub('', c)
-        if re.search(r'[(),:;/"“”«»…]', c) or len(c) < 3 or c.isdigit() or len(c.split()) > 6: continue
-        out.append(c)
-    return out
-
-
-def variants(k):
-    """The key as typed on any keyboard: straight and curly apostrophes, no accents or ligatures."""
-    out = [k, k.replace('’', "'"), k.replace("'", '’')]
-    for v in out[:]:
-        v = v.replace('’', "'").replace('œ', 'oe').replace('Œ', 'Oe').replace('æ', 'ae').replace('Æ', 'Ae')
-        out.append(unicodedata.normalize('NFKD', v).encode('ascii', 'ignore').decode())
-    return [v for v in out if len(v) >= 3]
-
-
-def entry_keys(e, R, log):
-    """Keys of one lexicon entry, before the redundancy pass (lorebook guide, section 4)."""
-    keep, kind = set(R['article_keep']), e['kind']
-    names = [x.strip() for x in e['en'].split(' — ')]  # a work: title as cited — our English title
-    head = (clean(names[-1], kind, keep) or [names[-1]])[0]
-    keys = [k for n in names for k in clean(n, kind, keep)]
-    if kind != 'term':  # names and titles as the book spells them; French forms of terms are not keys
-        keys += [k for f in e['forms'] for k in clean(f, kind, keep)]
-    words = head.split()
-    if kind == 'term' and len(words) == 1 and head not in R['no_plural'] and not head.lower().endswith(PLURAL_SKIP):
-        keys.append(head + 's')
-    if kind == 'person' and len(words) > 1 and words[0] not in ('Saint', 'King', 'Dr', 'Monsieur') \
-            and not re.search(r'\b(of|the|and)\b', head) and len(words[-1]) >= 3:
-        keys.append(words[-1]); log['surnames'].append(f"{e['id']} {head} -> {words[-1]}")
-    everyday = set(R['everyday'])
-    keys = [k for k in keys if k == head or k.lower() not in everyday]
-    rule = R['entries'].get(e['id'], {})
-    for r in rule.get('remove', []):
-        if not any(k.lower() == r.lower() for k in keys): log['unused'].append(f"{e['id']} remove {r}")
-        keys = [k for k in keys if k.lower() != r.lower()]
-    keys += rule.get('add', [])
-    return head, keys
+IS_RE = lambda k: k.startswith('/') and k.rfind('/') > 0
 
 
 def block(e, name):
@@ -155,7 +106,7 @@ def worldbook():
     merged = {m: g[0] for g in R['merge'] for m in g[1:]}
     groups = {}
     for e in entries: groups.setdefault(merged.get(e['id'], e['id']), []).append(e)
-    log = {'surnames': [], 'unused': []}
+    for g in groups.values(): g.sort(key=lambda e: e['id'] in merged)  # the kept entry's block first
     base = dict(constant=False, addMemo=True, order=100, position=1, excludeRecursion=False, preventRecursion=False,
                 delayUntilRecursion=False, probability=100, useProbability=False, depth=4)
     wb = {'name': 'Fulcanelli — Le Mystère des Cathédrales',
@@ -163,19 +114,14 @@ def worldbook():
                          'as the book itself explains them (English).',
           'entries': {'0': dict(base, uid=0, key=[], keysecondary=[], comment='READ ME', content=README,
                                 selective=False, selectiveLogic=0, disable=True)}}
-    bodies, report, merges = [], [], []
+    bodies, report, merges, bad = [], [], [], [f'no keys: {gid}' for gid in groups if gid not in R['keys']]
+    bad += [f'keys for an id that is not a kept entry: {i}' for i in R['keys'] if i not in groups]
     for gid, members in groups.items():
-        keys, contents, head = [], [], None
+        contents = []
         for e in members:
-            h, k = entry_keys(e, R, log)
-            head, keys = head or h, keys + k
             c, b = block(e, name); contents.append(c); bodies.append((len(wb['entries']), e['id'], b))
-        seen, ks = set(), []
-        for k in keys:
-            for v in variants(k):
-                if v.lower() not in seen: seen.add(v.lower()); ks.append(v)
-        ks = [k for k in ks if not any(len(s) < len(k) and st_match(s, k) for s in ks)]  # redundancy pass, last
-        gated = head.lower() in R['everyday']
+        ks = R['keys'].get(gid, [])
+        gated = gid in R['gated']
         own = {k.lower() for k in ks}
         uid = len(wb['entries'])
         comment = ' + '.join(f"{name[e['id']]} ({e['kind']}; {e['id']})" for e in members)
@@ -185,14 +131,13 @@ def worldbook():
                                        selective=gated, selectiveLogic=0, disable=False)
         report.append(f"{comment} | {'GATED' if gated else 'open'} | {' ; '.join(ks)}")
     # checks (lorebook guide, section 9)
-    keep, bad = set(R['article_keep']), []
     E = [e for e in wb['entries'].values() if not e['disable']]
     for e in E:
         if not e['key']: bad.append(f"no keys: {e['comment']}")
         for k in e['key']:
-            if re.search(r'[(),/;:]', k): bad.append(f"punctuation: {k}")
-            if ART.match(k) and k not in keep: bad.append(f"article: {k}")
-            if any(len(s) < len(k) and st_match(s, k) for s in e['key']): bad.append(f"redundant: {k}")
+            if not IS_RE(k) and re.search(r'[(),/;:]', k): bad.append(f"punctuation: {k}")
+            if not IS_RE(k) and re.match(r'(?:the|a|an)\s', k, re.I) and k != 'A vaillans cuers riens impossible': bad.append(f"article: {k}")
+            if not IS_RE(k) and any(not IS_RE(s) and len(s) < len(k) and st_match(s, k) for s in e['key']): bad.append(f"redundant: {k}")
         if e['selective'] and (not e['keysecondary'] or {k.lower() for k in e['key']} & {c.lower() for c in e['keysecondary']}):
             bad.append(f"gate: {e['comment']}")
     ids = {i for e in E for i in re.findall(r'\b(e\d{3})\)', e['comment'])}
@@ -205,13 +150,12 @@ def worldbook():
     path = os.path.join(ROOT, 'lorebook', 'Fulcanelli_Mystere_des_Cathedrales.json')
     write(path, json.dumps(wb, ensure_ascii=False, indent=1) + '\n')
     rep = (['# Entries (comment | gate | keys)'] + report + ['', '# Merges'] + merges +
-           ['', '# Automatic surnames'] + log['surnames'] + ['', '# Removes that matched no key'] + log['unused'] +
            ['', '# Keys shared by several entries'] + [f"{k}: {', '.join(v)}" for k, v in sorted(shared.items())] +
            ['', '# Failed checks'] + bad)
     write(os.path.join(LEX, 'worldbook_report.txt'), '\n'.join(rep) + '\n')
     nk = sum(len(e['key']) for e in E)
     print(f"{len(E)} entries, {nk} keys, {sum(e['selective'] for e in E)} gated, {len(merges)} merges, "
-          f"{len(shared)} shared keys, {len(log['unused'])} unused removes, {len(bad)} failed checks -> {path}")
+          f"{len(shared)} shared keys, {len(bad)} failed checks -> {path}")
     return not bad
 
 
