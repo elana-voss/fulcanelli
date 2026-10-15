@@ -4,10 +4,13 @@ An English digest of Fulcanelli's *Le Mystère des Cathédrales*, published as a
 
 Read the book online: <https://elana-voss.github.io/fulcanelli/>
 
+## Lorebook
+
+[`lorebook/Fulcanelli_Mystere_des_Cathedrales.json`](https://raw.githubusercontent.com/elana-voss/fulcanelli/main/lorebook/Fulcanelli_Mystere_des_Cathedrales.json): the worldbook, English only, built from the lexicon: one entry per subject, keyed by the words a reader would type (English names, variants and spellings; persons also by surname; works by their cited and English titles). Download it and import it in SillyTavern under World Info, Import.
+
 ## Contents
 
 - `src/`: the book. One page per part, the book as a whole, how Fulcanelli reads the monuments and the Great Work that reading describes, each *in Plain Terms* (referenced) and *in Plain Language* (everyday words), the lexicon (English headword, the French form as the book spells it, how the English was arrived at) and the plate list.
-- `lorebook/Fulcanelli_Mystere_des_Cathedrales.json`: the worldbook, English only, one entry per lexicon subject, keyed by the words a reader would type (English names, variants and spellings; persons also by surname; works by their cited and English titles). Import it in SillyTavern under World Info, Import.
 
 ## Rights
 
