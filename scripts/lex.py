@@ -134,8 +134,9 @@ def block(e, name):
     strip = lambda s: re.sub(r'\s*\[[^\]]*(?:¶|n\d)[^\]]*\]', '', s).strip()
     names = [x.strip() for x in e['en'].split(' — ')]
     c = f"[{e['kind'].capitalize()}: {names[-1]}{f' ({names[0]})' if len(names) > 1 else ''}]\n{strip(e['body'])}"
-    quotes = [q['en'] for q in e.get('quotes', [])]
-    if quotes: c += '\n\nIn the book\'s words: ' + ' / '.join(f'“{q}”' for q in quotes)
+    for who in ('Fulcanelli', 'Canseliet, in his preface'):  # the prefaces (PREF1-3) are Canseliet's
+        quotes = [q['en'] for q in e.get('quotes', []) if q['ref'].startswith('PREF') == (who != 'Fulcanelli')]
+        if quotes: c += f'\n\n{who}: ' + ' / '.join(f'“{q}”' for q in quotes)
     same = [name[s] for s in e.get('same_as', []) if s in name]
     if same: c += '\n\nIdentified in the text with: ' + ', '.join(same)
     return c, strip(e['body'])
